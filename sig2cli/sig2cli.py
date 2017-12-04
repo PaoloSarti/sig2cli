@@ -62,11 +62,12 @@ def sig2cli(fn):
         parser.add_argument(*names, required=True, type=par_type.get(nd, str), help=par_help.get(nd, ''))
     for d,v in defaults.items():
         names = ('-'+d[0], '--'+d) if easy_short_args else ('--'+d,) 
+        default_str = ' (default: {})'.format(v)
         if type(v) == bool:
             action = 'store_false' if v else 'store_true'
-            parser.add_argument(*names, action=action, help=par_help.get(d, ''))
+            parser.add_argument(*names, action=action, help=par_help.get(d, '')+default_str)
         else:
-            parser.add_argument(*names, default=v, type=type(v), help=par_help.get(d, ''))
+            parser.add_argument(*names, default=v, type=type(v), help=par_help.get(d, '')+default_str)
     @wraps(fn)
     def wrapped(argv):
         opt, _ = parser.parse_known_args(argv)

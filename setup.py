@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='sig2cli',
-      version='0.1',
+      version='0.1.2',
       description='Turn function signatures into Command Line Interfaces',
       url='https://github.com/PaoloSarti/sig2cli',
       author='Paolo Sarti',
