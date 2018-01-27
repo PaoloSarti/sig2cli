@@ -46,7 +46,7 @@ Install it with pip:
 pip install sig2cli
 ```
 
-# Description
+## Description
 
 The command line description is taken from the docstring of the method, with the following conventions:
 * the description is everything that precedes the string "Arg" (so Arguments, Args) that starts the argument list.
